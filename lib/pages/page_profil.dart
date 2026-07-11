@@ -9,24 +9,37 @@ class PageProfil extends StatelessWidget {
       endDrawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text(
-                "Menu",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+            SizedBox(
+              height:80,
+              child: DrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("assets/images/logo-esmt.webp"),
+                    Text(
+                  "Menu",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
+                  ],
+                  
+                )
               ),
             ),
             ListTile(
+              
               title: Text("Accueil", style: TextStyle(color: Colors.blue)),
               trailing: Icon(Icons.chevron_right),
               onTap: () {
                 Navigator.pushNamed(context, "/accueil");
               },
             ),
+            //Divider(color: Colors.white),
+            SizedBox(height:20),
 
             ListTile(
               title: Text("Paramètres", style: TextStyle(color: Colors.blue)),
